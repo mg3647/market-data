@@ -1,0 +1,8 @@
+{
+  "markets": [
+    {"ticker": "KXHIGHNY-26OCT11-T69", "event_ticker": "KXHIGHNY-26OCT11", "strike_type": "greater", "floor_strike": 69, "yes_sub_title": "70° or above", "yes_bid_dollars": "0.0000", "yes_ask_dollars": "0.0100", "last_price_dollars": "0.0100", "volume_fp": "4188.54", "open_interest_fp": "3573.54", "close_time": "2026-10-12T05:00:00Z"},
+    {"ticker": "KXHIGHNY-26OCT11-T62", "event_ticker": "KXHIGHNY-26OCT11", "strike_type": "less", "cap_strike": 62, "yes_sub_title": "61° or below", "yes_bid_dollars": "0.5400", "yes_ask_dollars": "0.5500", "last_price_dollars": "0.5500", "volume_fp": "6104.65", "open_interest_fp": "4229.21", "close_time": "2026-10-12T05:00:00Z"},
+    {"ticker": "KXHIGHNY-26OCT11-B68.5", "event_ticker": "KXHIGHNY-26OCT11", "strike_type": "between", "floor_strike": 68, "cap_strike": 69, "yes_sub_title": "68° to 69°", "yes_bid_dollars": "0.0200", "last_price_dollars": "0.0500", "volume_fp": "2621.45", "open_interest_fp": "2055.45", "close_time": "2026-10-12T05:00:00Z"}
+  ],
+  "cursor": ""
+}

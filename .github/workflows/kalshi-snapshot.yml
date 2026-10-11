@@ -1,0 +1,29 @@
+name: Kalshi NYC high snapshot
+
+on:
+  schedule:
+    # 10:07, 14:07 and 18:07 New York time (EDT; one hour earlier in winter)
+    - cron: "7 14,18,22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Snapshot open markets and log settled results
+        run: python -m marketdata.kalshi --settled
+      - name: Commit data
+        run: |
+          git config user.name "market-data bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/kalshi
+          git diff --cached --quiet || git commit -m "Kalshi snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
